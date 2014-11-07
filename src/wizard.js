@@ -49,6 +49,15 @@ angular.module('mgo-angular-wizard').directive('wizard', function() {
                 }
             };
 
+            this.removeStep = function(step) {
+                if(step > 0) {
+                  $scope.steps.splice(step, 1);
+                  if ($scope.steps.length === 1) {
+                      $scope.goTo($scope.steps[0]);
+                  }
+                }
+            };
+
             $scope.goTo = function(step) {
                 unselectAll();
                 $scope.selectedStep = step;
