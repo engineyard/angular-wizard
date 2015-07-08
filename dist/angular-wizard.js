@@ -108,7 +108,6 @@ angular.module('mgo-angular-wizard').directive('wizard', function() {
             };
 
             $scope.goTo = function(step) {
-              console.log('scope.goTo');
                 unselectAll();
                 $scope.selectedStep = step;
                 if (!_.isUndefined($scope.currentStep)) {
@@ -142,7 +141,6 @@ angular.module('mgo-angular-wizard').directive('wizard', function() {
             };
 
             this.goTo = function(step) {
-              console.log('goTo');
                 var stepTo;
                 if (_.isNumber(step)) {
                     stepTo = $scope.steps[step];
